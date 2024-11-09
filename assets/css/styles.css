@@ -1,0 +1,479 @@
+/* ================================= FONTS ================================= */
+@font-face {
+    font-family: "norse-bold";
+    src: url("../fonts/Norse-Bold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("../fonts/poppins-black-webfont.woff2") format("woff2"),
+         url("../fonts/poppins-black-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("../fonts/Poppins-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ================================= GENERALS STYLES================================= */
+:root {
+    --bg-color: #FFF;
+    --text-color: #000;
+    --button-bg: #596D48;
+    --form-bg: #F9FAFB;
+    --border-color: #E5E6E7;
+    --label-color: #A5A6A7;
+    --invalid-color: #B92326;
+    --invalid-bg: rgb(185 35 38 / 0.25);
+    --valid-color: #8BC34A;
+    --valid-bg: rgba(139, 195, 74, 0.25);
+    --placeholder-color: #a5a6a7d2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "poppins", "Heltica", "Arial", sans-serif;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    background-color: #111827;
+    color: var(--text-color);
+}
+
+:focus {
+    outline: 0;
+}
+
+input + span {
+    position: relative;
+}
+
+input:required + span::after {
+    content: "*";
+    position: absolute;
+    top: -5.8rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+/* ================================= CONTENT ================================= */
+.content {
+    max-width: 90%;
+    width: 87rem;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 5rem 5rem 0;
+    background-image: url("../img/halie-west-25xggax4bSA-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* ================================= LOGO ================================= */
+.content__logo {
+    position: absolute;  
+    top: 1%;
+    left: 3%;
+    display: flex;
+    align-items: center;
+    font-family: "norse-bold";
+    font-size: 1.5rem;
+    color: var(--bg-color);
+}
+
+.logo__image {
+    width: 26px;
+    height: 41px;
+}
+
+.logo__title {
+    position: relative;
+    top: 2%;
+}
+
+
+/* ================================= ANIMATIONS ================================= */
+@keyframes silo-help {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes silo-help {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes silo-help {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ================================= CONTAINER ================================= */
+.content__form-container {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    background-color: var(--form-bg);
+}
+
+.form-container__title {
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1.3rem 3rem;
+    text-align: center;
+    background-image: url("../img/halie-west-25xggax4bSA-unsplash.jpg");
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* ================================= FORM ================================= */
+.form__fiedset {
+    position: relative;
+    padding: 2.5rem 4rem 0;
+    background-color: var(--bg-color);
+    border: 0;
+    box-shadow: 0 3px 5px rgb(90 90 90 / 0.3);
+}
+
+.form__legend {
+    position: absolute;
+    top: 11px;
+    left: 39px;
+    font-family: "poppins";
+    font-weight: normal;
+}
+
+.form__fiedset > .form__group {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 4rem 0 2rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.form__input {
+    width: 100%;
+    height: 4.2rem;
+    position: relative;
+    font-size: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    box-shadow: 0 1rem 1rem -0.8rem rgb(0 0 0 / 0.1);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    line-height: 2.1rem;
+    outline: none;
+}
+
+.form__input:focus {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+}
+
+.form__label {
+    width: 100%;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    opacity: 0;
+    color: var(--label-color);
+    transition: all 300ms linear;
+    pointer-events: none;
+}
+
+.form__input:focus ~ label,
+.form__input:not(:placeholder-shown) ~ label {
+    top: -1.3rem;
+    left: 0;
+    opacity: 1;
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.form__input::placeholder {
+    font-size: 1.1rem;
+    color: var(--placeholder-color);
+    text-transform: uppercase;
+}
+
+.form__input::-webkit-input-placeholder {
+    font-size: 1.1rem;
+    color: var(--placeholder-color);
+    text-transform: uppercase;
+}
+
+.form__input::-moz-input-placeholder {
+    font-size: 1.1rem;
+    color: var(--placeholder-color);
+    text-transform: uppercase;
+}
+
+.form__input:focus::placeholder {
+    color: transparent;
+}
+
+.form__input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form__input:focus::-moz-input-placeholder {
+    color: transparent;
+}
+
+.form__input:invalid {
+    border: 1px solid var(--invalid-color);
+}
+
+.form__input:focus:invalid {
+    background-color: transparent;
+    border: 1px solid var(--invalid-color);
+    box-shadow: 0 0 2px 2px var(--invalid-bg);
+}
+
+.form__input:invalid + span::after {
+    color: var(--invalid-color);
+}
+
+.form__input:invalid ~ label {
+    color: var(--invalid-color);
+}
+
+.form__input:focus:invalid + span::after {
+    color: var(--invalid-color);
+}
+
+.form__input:focus:invalid ~ label::after {
+    content: " " attr(data-help);
+    font-size: 0.8rem;
+    text-transform: none;
+    animation: silo-help 100s;
+}
+
+.form__input:invalid ~ label::after {
+    content: " " attr(data-help);
+    font-size: 0.8rem;
+    text-transform: none;
+}
+
+.form__input:valid {
+    border: 1px solid var(--valid-color);
+}
+
+.form__input:focus:valid {
+    background-color: transparent;
+    border: 1px solid var(--valid-color);
+    box-shadow: 0 0 2px 2px var(--valid-bg);
+}
+
+.form__input:valid + span::after {
+    color: var(--valid-color);
+}
+
+.form__input:valid ~ label {
+    color: var(--valid-color);
+}
+
+.form__input:placeholder-shown {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+}
+
+.form__input:placeholder-shown + span::after {
+    color: var(--text-color);
+}
+
+.form__button {
+    margin: 2rem 3rem;
+    padding: 1rem 3rem;
+    background-color: var(--button-bg);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgb(90 90 90 / 0.3);
+    color: var(--bg-color);
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: background-color 100ms linear;
+}
+
+.form__button:hover {
+    background-color: #82a860;
+}
+
+.form-container__text {
+    font-size: 1.3rem;
+    margin: 0 3rem;
+    padding: 0 0 3rem;
+    color: #222;
+    letter-spacing: 0;
+}
+
+.text__link {
+    color: var(--button-bg);
+    text-decoration: none;
+}
+
+
+/* ================================= CREDIT PHOTO ================================= */
+.content__credit {
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    font-size: 0.7rem;
+    color: var(--border-color);
+}
+
+.credit__link {
+    color: var(--border-color);
+}
+
+
+/* ================================= DESKTOP ================================= */
+@media (min-width: 700px) {
+    /* ================================= CONTENT ================================= */
+    .content {
+        flex-flow: row nowrap;
+        padding: 0;
+        background-image: url(../img/halie-west-25xggax4bSA-unsplash.jpg);
+        background-position: 0 0;
+        background-size: contain;
+    }
+
+
+    /* ================================= LOGO ================================= */
+    .content__logo {
+        position: relative;
+        top: 135px;
+        left: 0;
+        flex-basis: 37%;
+        justify-content: center;
+        align-items: center;
+        height: 9rem;
+        font-size: 3.5rem;
+        background-color: rgb(0 0 0 / 0.4)
+    }
+
+    .logo__image {
+        width: 50px;
+        height: 70px;
+    }
+
+
+    /* ================================= CONTAINER ================================= */
+    .content__form-container {
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        flex-grow: 1;
+        padding: 0;
+    }
+    
+    .form-container__title {
+        display: flex;
+        align-items: end;
+        flex-grow: 1;
+        padding: 3rem;
+        text-align: left;
+    }
+
+
+    /* ================================= FORM ================================= */
+    .form__fiedset {
+        padding: 2.5rem 3rem;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0 3rem;
+    }
+
+    .form__fiedset > .form__group {
+        display: block;
+        margin: 0;
+        margin-top: 3.5rem;
+        font-size: 1rem;
+    }
+
+    .form__input {
+        width: 20rem;
+        height: 2.5rem;
+        font-size: 1.3rem;
+    }    
+
+    input:required + span::after {
+        top: -2.2rem;
+    }
+
+    .form-container__text {
+        flex-grow: 1;
+    }
+
+
+    /* ================================= CREDIT PHOTO ================================= */
+    .content__credit {
+        inset: auto auto 3% 7%;
+    }
+}
